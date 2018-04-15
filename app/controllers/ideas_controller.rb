@@ -6,11 +6,17 @@ class IdeasController < ApplicationController
   # GET /ideas.json
   def index
     @ideas = Idea.all
+    if params[:search]
+      @ideas = Idea.search(params[:search]).order("created_at DESC")
+    else
+      @ideas = Idea.all.order("created_at DESC")
+    end
   end
 
   # GET /ideas/1
   # GET /ideas/1.json
   def show
+    @comments = Comment.where(idea_id: @idea).order("created_at DESC")
   end
 
   # GET /ideas/new

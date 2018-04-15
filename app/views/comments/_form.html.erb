@@ -1,0 +1,11 @@
+<%= form_for([@idea, @idea.comments.build]) do |f| %>
+	
+	<div class="form-group">
+		<%= f.text_area :content, placeholder: "Write a comment...", class: "form-control" %>
+	</div>
+	
+	<div class="form-group">
+		<%= f.submit "Leave Comment", class: "btn btn-primary" %>
+	</div>
+	
+<% end %>

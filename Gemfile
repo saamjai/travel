@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # gem for authentication and users
 gem 'devise'
 
+# gem for google maps
+gem 'geocoder', '~> 1.4'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

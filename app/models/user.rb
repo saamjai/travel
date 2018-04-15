@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
    has_many :ideas
+   has_many :comments
+
+   validates :first_name, presence: true
+   validates :last_name, presence: true
+
 end

@@ -4,9 +4,9 @@
       <h2><%= pluralize(idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
 
       <ul>
-      <% idea.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% idea.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -18,7 +18,7 @@
 
   <div class="form-group">
     <%= form.label :destination %>
-    <%= form.text_field :destination, id: :idea_destination, class: "form-control" %>
+    <%= form.text_field :destination, id: :idea_destination, placeholder: "Location...", class: "form-control" %>
   </div>
 
   <div class="form-group">
@@ -33,7 +33,7 @@
 
   <div class="form-group">
     <%= form.label :tags %>
-    <%= form.text_field :tag, id: :idea_tag, class: "form-control" %>
+    <%= form.text_field :tag, id: :idea_tag, placeholder: "For searching...", class: "form-control" %>
   </div>
 
   <div class="form-group">

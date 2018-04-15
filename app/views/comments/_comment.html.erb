@@ -1,0 +1,22 @@
+<h3>
+	This idea has <%= pluralize(@comments.count, "comment") %>:
+</h3>
+
+<section id="comments-section">
+	<% @comments.each do |comment| %>
+
+		<p>
+			<b><%= comment.user.first_name %> says:</b> <small class="text-muted">[<%= time_ago_in_words(comment.created_at) %> ago]</small>
+		</p>
+		<p>
+			<%= comment.content %>
+		</p>
+
+		<% if current_user == comment.user %>
+			<small class="text-muted"><%= link_to "Delete comment", [comment.idea, comment], method: :delete %> |
+			<%= link_to "Edit comment", edit_idea_comment_path(comment.idea, comment) %></small>
+		<% end %>
+		<hr>
+	<% end %>
+</section>
+<%= render 'comments/form' %>

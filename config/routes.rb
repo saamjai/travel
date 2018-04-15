@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
   devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :ideas
+  resources :ideas do
+  	resources :comments
+  end
   
   root 'pages#welcome'
 

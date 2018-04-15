@@ -1,0 +1,29 @@
+<p>
+  <h2>
+    <%= link_to idea.title, idea %> 
+    <small class="text-muted">
+      submitted by <%= idea.user.first_name %>
+    </small>
+  </h2>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= idea.destination %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= idea.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= idea.end %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= idea.tag %>
+</p>
+<hr>

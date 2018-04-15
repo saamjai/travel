@@ -1,8 +1,7 @@
 class PagesController < ApplicationController
+  
   def welcome
-  end
-
-  def list
+  	@ideas = Idea.all
   end
 
   def account

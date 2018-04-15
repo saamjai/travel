@@ -1,5 +1,14 @@
-<header>
-	<h1>Welcome to your Travel Ideas Website</h1>
-</header>
+<h1>
+	Our Travel Ideas Website
+</h1>
 
-<p>A welcome page</p>
+<p>
+	Add new travel ideas to share. Search for existing ideas and leave comments.
+</p>
+<p>
+	Don't forget to sign in!
+</p>
+
+<% @ideas.each do |idea| %>
+	<%= render 'ideas/idea', idea: idea %>
+<% end %>
