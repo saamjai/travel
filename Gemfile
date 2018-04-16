@@ -36,6 +36,9 @@ gem 'devise'
 # gem for google maps
 gem 'geocoder', '~> 1.4'
 
+#gem for seed dump
+gem 'seed_dump'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
