@@ -5,6 +5,9 @@
       submitted by <%= idea.user.first_name %>
     </small>
   </h2>
+  <small>
+     created on <%= idea.created_at.to_formatted_s(:long) %>
+  </small>
 </p>
 
 <p>

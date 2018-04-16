@@ -1,0 +1,56 @@
+<script>
+    $( document ).ready(function() {
+    //  console.log( "ready!" );
+    var delay = (function(){
+     var timer = 0;
+     return function(callback, ms){
+        clearTimeout (timer);
+       timer = setTimeout(callback, ms);
+     };
+  })();
+      
+      var dest="";
+
+
+    var input="";
+    $( "#idea_destination" ).keyup(function() {
+    
+    
+     delay(function(){
+
+    
+     dest=$( "#idea_destination" ).val();
+     console.log(dest );
+   
+   
+      //ajax
+       
+  var result="";     
+  $.ajax({
+    type: 'POST',
+    url: "https://api.hotwire.com/v1/deal/hotel?apikey=eqqkqmgrh9b4typjqa98dm5e&limit=10&dest="+dest+"&format=jsonp",
+    crossDomain: true,
+    dataType: 'jsonp',
+    success: function(data, textStatus, jqXHR) {
+      for(var i=0; i<10 ;i++)
+          result=result+ data.Result[i].Headline+"<br>" ;
+    
+    console.log(result);
+    $("#suggestions").html(result);
+        
+        
+    },
+    error: function (responseData, textStatus, errorThrown) {
+        alert('POST failed.');
+        console.log(responseData)
+    }
+    
+    
+  });
+   
+      //end of ajax
+      }, 500 );
+    });  
+      
+  });
+</script>
